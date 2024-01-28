@@ -1,4 +1,4 @@
-import { Barlow, Rubik } from 'next/font/google'
+import { Rubik, Barlow } from 'next/font/google'
 
 // ----------------------------------------------------------------------
 

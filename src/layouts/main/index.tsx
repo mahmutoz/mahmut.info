@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box'
+import { Container } from '@mui/material'
 
 import Footer from './footer'
 import Header from './header'
@@ -11,7 +12,7 @@ type Props = {
 
 export default function MainLayout({ children }: Props) {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
+    <Container maxWidth="md" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', height: 1 }}>
       <Header />
 
       <Box
@@ -24,6 +25,6 @@ export default function MainLayout({ children }: Props) {
       </Box>
 
       <Footer />
-    </Box>
+    </Container>
   )
 }

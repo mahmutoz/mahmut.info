@@ -12,13 +12,14 @@ type Props = {
 
 export default function MainLayout({ children }: Props) {
   return (
-    <Container maxWidth="md" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', height: 1 }}>
+    <Container maxWidth="md" sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
       <Header />
 
       <Box
         component="main"
         sx={{
           flexGrow: 1,
+          my: 2,
         }}
       >
         {children}

@@ -1,7 +1,7 @@
 export const paths = {
   home: '/',
-  about: '/about',
-  blog: '/blog',
-  gallery: '/gallery',
-  contact: '/contact',
+  about: '/coming-soon',
+  blog: '/coming-soon',
+  gallery: '/coming-soon',
+  contact: '/coming-soon',
 }

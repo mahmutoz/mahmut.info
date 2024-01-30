@@ -93,7 +93,7 @@ export default function Header() {
           <Stack direction="row" spacing={1.5}>
             {smUp &&
               navItems.map((item) => (
-                <Button key={item.path} onClick={() => router.push(item.path)}>
+                <Button key={item.title} onClick={() => router.push(item.path)}>
                   {item.title}
                 </Button>
               ))}

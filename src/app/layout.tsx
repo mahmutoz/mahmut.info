@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Providers from '@/app/providers'
+import MainLayout from '@/layouts/main'
 
 import { primaryFont } from 'src/theme/typography'
-import MainLayout from '@/layouts/main'
 
 export const viewport = {
   themeColor: '#000000',

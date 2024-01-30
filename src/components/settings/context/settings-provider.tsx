@@ -1,7 +1,7 @@
 'use client'
 
-import isEqual from 'lodash/isEqual'
 import { useMemo } from 'react'
+import isEqual from 'lodash/isEqual'
 
 import { useLocalStorage } from 'src/hooks/use-local-storage'
 

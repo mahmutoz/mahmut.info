@@ -32,8 +32,6 @@ export default function Header() {
     setMobileOpen((prevState) => !prevState)
   }
 
-  const container = window !== undefined ? () => window.document.body : undefined
-
   const router = useRouter()
 
   const smUp = useResponsive('up', 'sm')
@@ -104,7 +102,6 @@ export default function Header() {
       {!smUp && (
         <nav>
           <Drawer
-            container={container}
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}

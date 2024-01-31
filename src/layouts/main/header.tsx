@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Logo from '@/components/logo'
 import { paths } from '@/routes/paths'
 import Iconify from '@/components/iconify'
 import { useRouter } from 'next/navigation'
@@ -10,6 +11,7 @@ import ThemeButton from '@/layouts/_common/theme-button'
 import { useNavData } from '@/layouts/main/config-navigation'
 
 import Box from '@mui/material/Box'
+import { Card } from '@mui/material'
 import List from '@mui/material/List'
 import Stack from '@mui/material/Stack'
 import AppBar from '@mui/material/AppBar'
@@ -38,13 +40,15 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MAHMUT ÖZ
-      </Typography>
+      <Button onClick={() => router.push(paths.home)} sx={{ fontSize: 20 }}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          MAHMUT ÖZ
+        </Typography>
+      </Button>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.path} disablePadding>
+          <ListItem key={item.path} onClick={() => router.push(item.path)} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary={item.title} />
             </ListItemButton>
@@ -55,13 +59,13 @@ export default function Header() {
   )
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', width: 1, mt: 2 }}>
+    <Box component={Card} sx={{ display: 'flex', alignItems: 'center', width: 1, mt: 2 }}>
       <AppBar
         sx={{
           position: 'relative',
           maxWidth: 'md',
           backgroundColor: 'background.neutral',
-          borderRadius: 1,
+          flexShrink: 1,
         }}
         component="nav"
       >
@@ -84,7 +88,7 @@ export default function Header() {
               </IconButton>
             )}
             <Button onClick={() => router.push(paths.home)} sx={{ fontSize: 20 }}>
-              M
+              <Logo />
             </Button>
           </Stack>
 

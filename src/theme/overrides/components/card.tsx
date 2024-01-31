@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ export function card(theme: Theme) {
         root: {
           position: 'relative',
           boxShadow: theme.customShadows.card,
-          borderRadius: theme.shape.borderRadius * 2,
+          borderRadius: theme.shape.borderRadius * 1.5,
           zIndex: 0, // Fix Safari overflow: hidden with border radius
         },
       },
@@ -28,5 +28,5 @@ export function card(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

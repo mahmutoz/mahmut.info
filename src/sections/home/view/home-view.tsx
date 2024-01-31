@@ -1,3 +1,5 @@
+import HomeHero from '@/sections/home/home-hero'
+
 export default function HomeView() {
-  return <h1>Home</h1>
+  return <HomeHero />
 }

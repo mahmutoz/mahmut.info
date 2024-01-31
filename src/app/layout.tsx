@@ -14,6 +14,13 @@ export const viewport = {
 export const metadata: Metadata = {
   title: 'Mahmut OZ',
   description: "Mahmut's personal website",
+  manifest: '/manifest.json',
+  icons: [
+    { rel: 'icon', url: 'assets/favicon/favicon.ico' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', url: 'assets/favicon/favicon-16x16.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', url: 'assets/favicon/favicon-32x32.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', url: 'assets/favicon/apple-touch-icon.png' },
+  ],
 }
 
 export default function RootLayout({

@@ -11,7 +11,7 @@ export default function Providers({ children }: Props) {
   return (
     <SettingsProvider
       defaultSettings={{
-        themeMode: 'light', // 'light' | 'dark'
+        themeMode: 'dark', // 'light' | 'dark'
         themeContrast: 'default', // 'default' | 'bold'
         themeLayout: 'vertical', // 'vertical' | 'horizontal' | 'mini'
         themeColorPresets: 'blue', // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'

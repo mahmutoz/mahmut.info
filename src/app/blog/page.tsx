@@ -1,3 +1,5 @@
+import { BlogView } from '@/sections/blog/view'
+
 export default function Page() {
-  return <div>Blog</div>
+  return <BlogView />
 }

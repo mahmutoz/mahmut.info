@@ -21,6 +21,8 @@ const nextConfig = {
     })
     return config
   },
-};
+}
 
-export default withContentlayer(nextConfig);
+const config = withContentlayer(nextConfig)
+
+module.exports = config

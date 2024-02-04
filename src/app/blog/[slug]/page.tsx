@@ -34,7 +34,7 @@ export function generateMetadata(context: Params): Metadata | undefined {
 
   const metadata = createMetadata({
     title: `${title} | Mahmut ÖZ`,
-    description: summary || 'Blog post by Mahmut ÖZ',
+    description: summary || "Mahmut ÖZ'ün Kişisel Blog Sayfası",
     keywords: post.keywords,
   })
   return {

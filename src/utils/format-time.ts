@@ -28,7 +28,7 @@ export const formatDate = (
   try {
     const date = getDate(baseDate)
     if (!date) return ''
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat('tr-TR', {
       // Use Istanbul Timezone (UTC+3)
       timeZone: 'Europe/Istanbul',
       ...(asTime ? timeFormattingOptions : dateFormattingOptions),

@@ -28,7 +28,7 @@ const customizeToc = (toc: RehypeElement): RehypeElement | null => {
             children: [
               {
                 type: 'text',
-                value: 'Table of Contents',
+                value: 'Konu Başlıkları',
                 properties: { className: [] },
               },
             ],

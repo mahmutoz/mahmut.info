@@ -7,12 +7,15 @@ import remarkSqueezeParagraphs from 'remark-squeeze-paragraphs'
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 
 import { toc } from './rehype/toc'
+import { prettyCode } from './rehype/code'
 
 const mdx: MDXOptions = {
   remarkPlugins: [remarkGfm, remarkSqueezeParagraphs, remarkUnwrapImages],
   rehypePlugins: [
     rehypeSlug,
     rehypeAccessibleEmojis,
+    // @ts-expect-error idk
+    prettyCode,
     [rehypeAutolinkHeadings, { properties: { className: ['anchor'] } }],
     toc,
   ],

@@ -1,0 +1,66 @@
+---
+title: 'Custom React Hook: useBoolean() Kullanımı'
+date: '2024-02-04'
+summary: 'React projelerinizde boolean değerlerini yönetmek için kullanışlı bir custom hook olan useBoolean() hook''unu nasıl kullanabileceğinizi öğrenin.'
+hero: 'use-boolean-hook/hero.png'
+---
+
+React içinde sıklıkla karşılaştığım ve projelerimde yoğun olarak kullandığım `useBoolean` hook'unun gücünden ve esnekliğinden bahsetmek istiyorum. Bu özel hook, boolean değerlerini yönetmek için basit, temiz ve son derece etkili bir yöntem sunuyor. İşte `useBoolean` hook'unu nasıl kullanabileceğinize dair bir rehber.
+
+Öncelikle, `useState` ve `useCallback` hook'larını kullanarak `useBoolean` hook'unu nasıl oluşturduğuma bir göz atalım:
+
+```tsx
+import { useState, useCallback } from 'react';
+
+interface ReturnType {
+  value: boolean;
+  onTrue: () => void;
+  onFalse: () => void;
+  onToggle: () => void;
+  setValue: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export function useBoolean(defaultValue?: boolean): ReturnType {
+  const [value, setValue] = useState(!!defaultValue);
+
+  const onTrue = useCallback(() => {
+    setValue(true);
+  }, []);
+
+  const onFalse = useCallback(() => {
+    setValue(false);
+  }, []);
+
+  const onToggle = useCallback(() => {
+    setValue((prev) => !prev);
+  }, []);
+
+  return {
+    value,
+    onTrue,
+    onFalse,
+    onToggle,
+    setValue,
+  };
+}
+```
+
+Bu yapı, başlangıç değeri olarak opsiyonel bir boolean değer alır ve dört ana işlev sunar: `onTrue`, `onFalse`, `onToggle`, ve `setValue`. Bu işlevler, hook'un değerini doğrudan veya dolaylı olarak kontrol etmek için kullanılır.
+
+### Kullanım Senaryoları
+
+- #### Durum Kontrolü
+
+UI bileşenlerinin görünürlüğü, örneğin bir açılır menü, modal veya bildirim, sıklıkla boolean değerlerle yönetilir. `useBoolean` hook'u, bu tür durumları yönetmek için idealdir. `value` ile bileşenin görünürlüğünü kontrol edebilir, `onToggle` ile kullanıcı etkileşimine yanıt olarak görünürlüğü değiştirebilirsiniz.
+
+- #### Form Gönderme
+
+Form gönderimi sırasında bir yükleme göstergesini kontrol etmek için `useBoolean` hook'unu kullanabilirsiniz. `onTrue` ile yükleme göstergesini etkinleştirebilir ve işlem tamamlandığında `onFalse` ile devre dışı bırakabilirsiniz.
+
+- #### Kullanıcı Etkileşimleri
+
+Buton gibi etkileşimli elementlerde, kullanıcı etkileşiminin bir sonucu olarak belirli durumları tetiklemek için `useBoolean` kullanılabilir. Örneğin, bir butona tıklama ile bir açılır pencerenin durumunu `onToggle` ile kolayca değiştirebilirsiniz.
+
+### Sonuç
+
+`useBoolean` hook'u, React projelerinizde boolean değerlerini yönetmek için son derece kullanışlı bir araçtır. Kullanımı kolay, anlaşılır ve projenin okunabilirliğini artırır. Özellikle UI durumlarını kontrol etmek için mükemmeldir ve kodunuzu daha temiz, daha organize hale getirir. Kendi projelerinizde `useBoolean` hook'unu kullanarak, React'taki durum yönetimini daha verimli ve etkili bir şekilde gerçekleştirebilirsiniz.

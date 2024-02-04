@@ -29,10 +29,12 @@
     "reading-time": "^1.5.0",
     "rehype-accessible-emojis": "^0.3.2",
     "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.12.6",
     "rehype-slug": "^6.0.0",
-    "remark-gfm": "^4.0.0",
+    "remark-gfm": "^3.0.1",
     "remark-squeeze-paragraphs": "^6.0.0",
-    "remark-unwrap-images": "^4.0.0"
+    "remark-unwrap-images": "^4.0.0",
+    "shikiji": "^0.9.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

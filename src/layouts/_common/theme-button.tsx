@@ -1,8 +1,8 @@
 import Iconify from '@/components/iconify'
 import { useSettingsContext } from '@/components/settings'
 
+import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
-import { Tooltip } from '@mui/material'
 
 export default function ThemeButton() {
   const { themeMode, onUpdate } = useSettingsContext()

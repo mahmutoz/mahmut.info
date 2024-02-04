@@ -7,20 +7,20 @@ import { paths } from 'src/routes/paths'
 export function useNavData() {
   return useMemo(
     () => [
-      {
-        title: 'About',
-        path: paths.about,
-      },
+      // {
+      //   title: 'Hakkımda',
+      //   path: paths.about,
+      // },
       {
         title: 'Blog',
         path: paths.blog,
       },
       {
-        title: 'Gallery',
+        title: 'Galeri',
         path: paths.gallery,
       },
       {
-        title: 'Contact',
+        title: 'İletişim',
         path: paths.contact,
       },
     ],

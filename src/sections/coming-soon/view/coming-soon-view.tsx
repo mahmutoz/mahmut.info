@@ -11,7 +11,7 @@ export default function ComingSoonView() {
       }}
     >
       <Typography variant="h3" m="auto">
-        Coming soon...
+        Yakında...
       </Typography>
     </Box>
   )

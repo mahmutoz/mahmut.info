@@ -5,58 +5,31 @@ import Logo from '@/components/logo'
 import { paths } from '@/routes/paths'
 import Iconify from '@/components/iconify'
 import { useRouter } from 'next/navigation'
-import { NAV } from '@/layouts/config-layout'
 import { useResponsive } from '@/hooks/use-responsive'
-import ThemeButton from '@/layouts/_common/theme-button'
 import { useNavData } from '@/layouts/main/config-navigation'
+import MobileNavList from '@/layouts/main/nav/mobile-nav-list'
+import DesktopNavList from '@/layouts/main/nav/desktop-nav-list'
 
 import Box from '@mui/material/Box'
 import { Card } from '@mui/material'
-import List from '@mui/material/List'
 import Stack from '@mui/material/Stack'
 import AppBar from '@mui/material/AppBar'
 import Button from '@mui/material/Button'
-import Drawer from '@mui/material/Drawer'
-import Divider from '@mui/material/Divider'
 import Toolbar from '@mui/material/Toolbar'
-import ListItem from '@mui/material/ListItem'
 import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
 
 export default function Header() {
   const navItems = useNavData()
 
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState)
-  }
-
   const router = useRouter()
 
   const smUp = useResponsive('up', 'sm')
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Button onClick={() => router.push(paths.home)} sx={{ fontSize: 20 }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-          MAHMUT ÖZ
-        </Typography>
-      </Button>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.path} onClick={() => router.push(item.path)} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState)
+  }
 
   return (
     <Box component={Card} sx={{ display: 'flex', alignItems: 'center', width: 1, mt: 2 }}>
@@ -92,34 +65,10 @@ export default function Header() {
             </Button>
           </Stack>
 
-          <Stack direction="row" spacing={1.5}>
-            {smUp &&
-              navItems.map((item) => (
-                <Button key={item.title} onClick={() => router.push(item.path)}>
-                  {item.title}
-                </Button>
-              ))}
-            <ThemeButton />
-          </Stack>
+          <DesktopNavList navItems={navItems} />
         </Toolbar>
       </AppBar>
-      {!smUp && (
-        <nav>
-          <Drawer
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: NAV.W_DRAWER },
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </nav>
-      )}
+      {!smUp && <MobileNavList navItems={navItems} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />}
     </Box>
   )
 }

@@ -3,8 +3,10 @@
 import Image from '@/components/image'
 import type { Blog } from 'contentlayer/generated'
 
-const MAX_WIDTH = 96
-const MAX_HEIGHT = 72
+import Box from '@mui/material/Box'
+
+const MAX_WIDTH = 132
+const MAX_HEIGHT = 88
 const getHeroProps = (heroMeta: Blog['heroMeta']) => {
   const { width = MAX_WIDTH, height = MAX_HEIGHT, ...rest } = heroMeta || {}
   return {
@@ -22,20 +24,20 @@ type BlogPostImageProps = {
 
 export default function BlogPostImage({ post: { title, hero, heroMeta } }: BlogPostImageProps) {
   return (
-    <Image
-      src={hero || ''}
-      ratio="1/1"
-      alt={`Hero image for blog post "${title}"`}
-      size="small"
-      variant="square"
-      objectFit="cover"
-      sx={{
-        mr: 1,
-        width: MAX_WIDTH,
-        height: MAX_HEIGHT,
-        borderRadius: 1,
-      }}
-      {...getHeroProps(heroMeta)}
-    />
+    <Box width={MAX_WIDTH} height={MAX_HEIGHT} overflow="hidden">
+      <Image
+        src={hero || ''}
+        ratio="1/1"
+        alt={`"${title}" yazısının öne çıkan görseli`}
+        size="small"
+        variant="square"
+        objectFit="cover"
+        sx={{
+          mr: 1,
+          borderRadius: 1,
+        }}
+        {...getHeroProps(heroMeta)}
+      />
+    </Box>
   )
 }

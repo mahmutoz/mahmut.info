@@ -11,14 +11,17 @@ const StyledText = styled(m.h2)(({ theme }) => ({
   ),
   lineHeight: 1,
   letterSpacing: 4,
-  textAlign: 'center',
+  textAlign: 'left',
   backgroundSize: '400%',
   marginRight: 0,
   fontFamily: theme.typography.fontSecondaryFamily,
   writingMode: 'vertical-rl',
-  fontSize: `${24 / 16}rem`,
+  fontSize: `${15 / 16}rem`,
+  [theme.breakpoints.between('sm', 'md')]: {
+    fontSize: `${32 / 16}rem`,
+  },
   [theme.breakpoints.up('md')]: {
-    fontSize: `${26 / 16}rem`,
+    fontSize: `${20 / 16}rem`,
   },
 }))
 

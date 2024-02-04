@@ -27,8 +27,8 @@ export const BlogPost = () => (
         <ListItem key={year} sx={{ width: 1 }}>
           <Box
             id={`posts-from-${year}`}
-            title={`Posts from ${year}`}
-            aria-label={`Posts from ${year}`}
+            title={`${year} yılındaki yazılar`}
+            aria-label={`${year} yılındaki yazılar`}
             sx={{ width: 1 }}
           >
             <Stack>
@@ -38,17 +38,24 @@ export const BlogPost = () => (
             <Stack spacing={2}>
               {posts.sort(sortBlogPostsByDate).map((post: any) => (
                 <Card
+                  key={post.slug}
                   component={Link}
                   color="inherit"
                   href={post.link || `/blog/${post.slug}`}
-                  key={post.slug}
                   sx={{
                     p: 2,
                     backgroundColor: 'transparent',
+                    transform: 'scale(1)',
                     transition: 'background-color 0.2s ease',
                     textDecoration: 'none',
+                    img: {
+                      transition: 'transform 0.3s ease',
+                    },
                     '&:hover': {
                       backgroundColor: 'background.neutral',
+                      img: {
+                        transform: 'scale(1.05)',
+                      },
                     },
                   }}
                 >

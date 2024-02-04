@@ -37,8 +37,8 @@ export const BlogPostItem = ({ post, fullDate }: BlogPostItemProps) => {
           <Typography
             variant="caption"
             component="span"
-            title={`This blog post was published on ${a11yDate}`}
-            aria-label={`This blog post was published on ${a11yDate}`}
+            title={`Bu yazı ${a11yDate} tarihinde yayınlandı.`}
+            aria-label={`Bu yazı ${a11yDate} tarihinde yayınlandı.`}
           >
             {readableDate}
           </Typography>
@@ -56,8 +56,8 @@ export const BlogPostItem = ({ post, fullDate }: BlogPostItemProps) => {
               <Typography
                 variant="caption"
                 component="span"
-                title={`It takes ${post.readingTime} minutes to read this blog post`}
-                aria-label={`It takes ${post.readingTime} minutes to read this blog post`}
+                title={`Bu blog yazısını okumak ${post.readingTime} dakika sürer.`}
+                aria-label={`Bu blog yazısını okumak ${post.readingTime} dakika sürer.`}
               >
                 {Math.ceil(post.readingTime)} min read
               </Typography>

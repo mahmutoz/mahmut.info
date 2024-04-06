@@ -14,7 +14,7 @@ export default function DesktopNavList({ navItems }: NavListProps) {
 
   return (
     <Stack direction="row" spacing={1.5} position="relative">
-      {smUp && navItems.map((item) => <NavItem title={item.title} path={item.path} key={item.title} />)}
+      {smUp && navItems.map((item) => <NavItem title={item?.title} path={item?.path} key={item?.title} />)}
       <ThemeButton />
     </Stack>
   )

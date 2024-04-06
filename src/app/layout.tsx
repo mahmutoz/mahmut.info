@@ -12,8 +12,8 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Mahmut OZ',
-  description: "Mahmut's personal website",
+  title: 'Mahmut ÖZ',
+  description: "Mahmut ÖZ'ün kişisel web sitesi.",
   manifest: '/manifest.json',
   icons: [
     { rel: 'icon', url: 'assets/favicon/favicon.ico' },
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body className={primaryFont.className}>
         <Providers>
           <MainLayout>{children}</MainLayout>

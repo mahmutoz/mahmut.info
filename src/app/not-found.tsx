@@ -11,14 +11,14 @@ export default async function NotFound() {
   return (
     <Container>
       <Typography variant="h4" sx={{ mb: 3 }}>
-        Woops! ~ Page not found
+        Oops! ~ Sayfa Bulunamadı
       </Typography>
       <Typography variant="body2">
-        Unfortunately, the page you&apos;re looking for doesn&apos;t exist or has been moved.
+        Aradığınız sayfa ya silinmiş ya da hiç var olmamış olabilir. Lütfen URL&apos;yi tekrar kontrol edin.
       </Typography>
       <Typography variant="body2">Please double check the URL for typos.</Typography>
       <Button component={Link} href={paths.home} variant="contained" sx={{ mt: 2 }}>
-        Go back home
+        Anasayfa&apos;ya Dön
       </Button>
     </Container>
   )

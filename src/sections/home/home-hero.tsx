@@ -1,3 +1,4 @@
+import CvButton from '@/sections/home/component/cv-button'
 import HeroImage from '@/sections/home/component/hero-image'
 import StyledTextGradient from '@/sections/home/component/styled-text-gradient'
 
@@ -25,6 +26,7 @@ export default function HomeHero() {
             TypeScript ve Next.js&apos;e karşı yoğun bir ilgi duyuyorum. Tutkum, web geliştirmede pratik çözümleri
             öğrenmek ve uygulamaktır.
           </Typography>
+          <CvButton />
         </Stack>
       </Stack>
       <Stack direction="row" justifyContent="space-between">
